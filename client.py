@@ -4,10 +4,12 @@ import time
 import json
 import logging
 import log.client_log_config
+from log.log_decorator import log_decorator
 
 log = logging.getLogger("app.client")
 
 
+@log_decorator
 def create_message(action, time_s, type_s):
     if __debug__:
         log.debug("Вызвана функция create_message на клиенте")

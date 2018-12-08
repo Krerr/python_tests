@@ -3,10 +3,12 @@ import sys
 import json
 import logging
 import log.server_log_config
+from log.log_decorator import log_decorator
 
 log = logging.getLogger("app.server")
 
 
+@log_decorator
 def create_message(message, code, type="ok"):
     if(type == "ok"):
         if __debug__:
